@@ -3,6 +3,3 @@
 
 // Write your JavaScript code.
 
-$('#LoginModal').modal('show')
-
-$('#RegisterModal').modal('show')

@@ -1,35 +1,24 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MusicShopMVC.Models
 {
-    public class Bateria
+    public class Bateria : InstrumentoPercusion
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-
-         [Required(ErrorMessage = "Campo obligatorio")]
-        [MaxLength(30)]
-        public string Marca { get; private set; }
-        
-         [Required(ErrorMessage = "Campo obligatorio")]
+        [Required(ErrorMessage = "Ingrese la línea")]
         [MaxLength(30)]
         public string Linea { get; private set; }
 
-         [Required(ErrorMessage = "Campo obligatorio")]
-        [MaxLength(30)]
-        public string Modelo { get; private set; }
-
+        [Required(ErrorMessage = "Ingrese la cantidad de cuerpos")]
+        [Display(Name = "Cantidad de cuerpos")]
         public string Cuerpo { get; set; }
 
+        [Required(ErrorMessage = "Ingrese la cantidad de platillos")]
+        [Display(Name = "Cantidad de platillos")]
         public string Platillos { get; set; }
 
-        public string PedalBombo { get; set; }
+        public bool PedalBombo { get; set; }
 
-        public string Banqueta { get; set; }
-        
-        public string DiametroBombo { get; set; }
+        public bool Banqueta { get; set; }
     }
 }

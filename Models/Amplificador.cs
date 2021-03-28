@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MusicShopMVC.Models
 {
-    public class PianoDigital : InstrumentoTecla
+    public class Amplificador : ClaseBase
     {
-            
+        
     }
 }

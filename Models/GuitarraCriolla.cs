@@ -1,28 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MusicShopMVC.Models
 {
-    public class GuitarraCriolla
+    public class GuitarraCriolla : InstrumentoCuerda
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }   
-        public string Marca { get; set; }
-
-        public string Linea { get; set; }
-
-        public string Modelo { get; set; }
-
-        public string OrientacionMano { get; set; }
-
-        public int CantidadCuerdas { get; set; }
-
+        [Required(ErrorMessage = "Ingrese la cantidad de trastes")]
+        [Display(Name = "Cantidad de trastes")]
         public int CantidadTrastes { get; set; }
 
-        public string Origen { get; set; }
-
+        [Required(ErrorMessage = "Ingrese el tipo de madera")]
+        [Display(Name = "Madera del cuerpo")]
+        [MaxLength(20)]
         public string MaderaCuerpo { get; set; }  
     }
 }

@@ -1,17 +1,12 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MusicShopMVC.Models
 {
-    public class Trompeta
-    {
-        public string Marca { get; set; }
-        
-        public string Modelo { get; set; }
-        
-        public string Tipo{ get; set; }
-        
-        public string Material { get; set; }
-
+    public class Trompeta : InstrumentoViento
+    {   
+        [Required(ErrorMessage = "Ingrese la afinación")]
+        [MaxLength(30)]
         public string Afinacion { get; set; }
     }
 }
